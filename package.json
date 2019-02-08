@@ -1,0 +1,29 @@
+{
+  "name": "http-api-assignment",
+  "version": "1.0.0",
+  "engines": {
+    "node": "11.7.0",
+    "npm": "6.5.0"
+  },
+  "description": "Use Node.js to build a simple HTTP API complete with correct status codes and accept headers. Additionally it must detect wheteher the client is requesting xml or json and respond accordingly.",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnWSMartel/http-api-assignment.git"
+  },
+  "author": "John Martel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnWSMartel/http-api-assignment/issues"
+  },
+  "homepage": "https://github.com/JohnWSMartel/http-api-assignment#readme",
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
