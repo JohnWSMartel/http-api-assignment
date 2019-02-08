@@ -56,7 +56,7 @@ const forbidden = (request, response, params) => {
 	return respondJSON(request, response, 403, responseJSON);
 };
 
-const notImplempented = (request, response, params) => {
+const notImplemented = (request, response, params) => {
 	const responseJSON = {
 		message: 'Feature has not been implemented.',
 	};
@@ -69,11 +69,14 @@ const notFound = (request, response) => {
 		id: 'notFound',
 	};
 	
-	respondJSON(request, response, 404, responseJSON);
+	return respondJSON(request, response, 404, responseJSON);
 };
 
 module.exports = {
 	success,
 	badRequest,
+	unauthorized,
+	forbidden,
+	notImplemented,
 	notFound,
 };

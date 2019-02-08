@@ -9,7 +9,7 @@
   "main": "./src/server.js",
   "scripts": {
     "start": "node ./src/server.js",
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"No Tests\""
   },
   "repository": {
     "type": "git",

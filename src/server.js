@@ -10,6 +10,9 @@ const urlStruct = {
 	'/': htmlHandler.getIndex,
 	'/success':jsonHandler.success,
 	'/badRequest':jsonHandler.badRequest,
+	'/unauthorized':jsonHandler.unauthorized,
+	'/forbidden':jsonHandler.forbidden,
+	'/notImplemented':jsonHandler.notImplemented,
 	notFound:jsonHandler.notFound,
 };
 
@@ -37,7 +40,7 @@ const onRequest = (request, response) => {
 		default:
 			break;
 	}
-}
+};
 
 http.createServer(onRequest).listen(port);
 

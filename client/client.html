@@ -8,7 +8,16 @@
   <script type="text/babel">
 		const handleResponse = (xhr, parseResponse) => {
 			const content = document.querySelector('#content');     
-        
+			const type = xhr.getResponseHeader('content-type');
+			const h1 = document.createElement('h1');
+			const p = document.createElement('p');
+			
+			if(type === 'application/json'){
+				const obj = JSON.parse(xhr.response);
+				
+				h1.textContent = `Name: ${obj.name}`;
+				p.textContent = `Age: ${obj.age}`;
+			}else if (type)
 			switch(xhr.status){
 				case 200:
 					content.innerHTML = `<b>Success</b>`
@@ -30,7 +39,11 @@
 			if(parseResponse){
 				const obj = JSON.parse(xhr.response);
 				console.dir(obj);
-			} else {
+			} else if(type === 'application/json')
+			{
+				//parse response text into JSON
+			}else if(type === 'text/xml'){
+				
 				console.log('recieved');
 			}
     };
