@@ -23,18 +23,12 @@ const badRequest = (request, response, params) => {
     return respondJSON(request, response, 400, responseJSON);
   }
 
-  if (params.valid === 'true') {
-    responseJSON.message = 'Should not be true.';
-    responseJSON.id = 'badRequest';
-    return respondJSON(request, response, 200, responseJSON);
-  }
-
   return respondJSON(request, response, 200, responseJSON);
 };
 
 const unauthorized = (request, response, params) => {
   const responseJSON = {
-    message: 'User does not have authorization.',
+    message: 'User is Authorized.',
   };
 
   if (!params.valid || params.valid !== 'yes') {
@@ -42,13 +36,8 @@ const unauthorized = (request, response, params) => {
     responseJSON.id = 'unauthorized';
     return respondJSON(request, response, 401, responseJSON);
   }
-  if (params.valid === 'yes') {
-    responseJSON.message = 'Should not be yes.';
-    response.id = 'unauthorized';
-    return respondJSON(request, response, 200, responseJSON);
-  }
 
-  return respondJSON(request, response, 401, responseJSON);
+  return respondJSON(request, response, 200, responseJSON);
 };
 
 const forbidden = (request, response) => {

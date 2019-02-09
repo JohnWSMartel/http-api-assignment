@@ -27,20 +27,6 @@ const onRequest = (request, response) => {
   } else {
     urlStruct.notFound(request, response, params);
   }
-
-  /* switch (request.method){
-case 'GET':
-if(parsedUrl.pathname === '/')
-{
-htmlHandler.getIndex(request, response);
-}
-else if(parsedUrl.pathname === '/style.css'){
-htmlHandler.getCSS(request, response);
-}
-break;
-default:
-break;
-} */
 };
 
 http.createServer(onRequest).listen(port);
